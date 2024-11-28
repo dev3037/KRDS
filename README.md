@@ -27,13 +27,20 @@
 
 создание таблицы B
 
-![image](https://github.com/user-attachments/assets/698ac4cd-24c1-49bc-ae93-d075f22df671)
+![image](https://github.com/user-attachments/assets/03deb52b-bf47-4f6b-9c44-8485ecb1a909)
 
 Наполнение таблицы B
 
-![image](https://github.com/user-attachments/assets/cb1a6dcb-fb29-4ecf-ab27-952e9a4a902a)
+![image](https://github.com/user-attachments/assets/5bed0923-3ecc-4275-8adc-3abf7561e47d)
 
 Получение выборка непересекающегося множества значений колонки C
+
+![image](https://github.com/user-attachments/assets/056fb71d-c615-4d14-81de-b989d358266c)
+
+Полученная выборка
+
+![image](https://github.com/user-attachments/assets/37a6dcd4-7a57-42ca-8b3b-bc446556704f)
+
 
 
 
