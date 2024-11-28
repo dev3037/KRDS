@@ -35,11 +35,12 @@
 
 Получение выборка непересекающегося множества значений колонки C
 
-![image](https://github.com/user-attachments/assets/056fb71d-c615-4d14-81de-b989d358266c)
+![image](https://github.com/user-attachments/assets/06c64c85-86b7-48c2-a58c-e3eb52df83a7)
 
 Полученная выборка
 
-![image](https://github.com/user-attachments/assets/37a6dcd4-7a57-42ca-8b3b-bc446556704f)
+![image](https://github.com/user-attachments/assets/b124c6b9-1e06-46b3-ad58-d4f539cdfaa8)
+
 
 
 
