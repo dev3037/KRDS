@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/757d3a1b-8ef0-4d4c-8f8c-7f29b1e3d79b)
 
-Наполнение таблицы
+Наполнение таблицы A
 
 ![image](https://github.com/user-attachments/assets/c900c985-e0d5-4d35-a2de-97fb3f72e8ef)
 
@@ -28,6 +28,12 @@
 создание таблицы B
 
 ![image](https://github.com/user-attachments/assets/698ac4cd-24c1-49bc-ae93-d075f22df671)
+
+Наполнение таблицы B
+
+![image](https://github.com/user-attachments/assets/cb1a6dcb-fb29-4ecf-ab27-952e9a4a902a)
+
+Получение выборка непересекающегося множества значений колонки C
 
 
 
