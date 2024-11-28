@@ -6,4 +6,5 @@
 ![image](https://github.com/user-attachments/assets/757d3a1b-8ef0-4d4c-8f8c-7f29b1e3d79b)
 
 Наполнение таблицы
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/c900c985-e0d5-4d35-a2de-97fb3f72e8ef)
+
