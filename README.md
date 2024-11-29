@@ -3,7 +3,7 @@
 
 создание таблицы A
 
-<div align="center" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 10px; padding: 10px; background-color: #f9f9f9;"> <img src="https://github.com/user-attachments/assets/757d3a1b-8ef0-4d4c-8f8c-7f29b1e3d79b" alt="Создание таблицы A" style="width:70%; border-radius: 8px;"/> </div>
+![image](https://github.com/user-attachments/assets/757d3a1b-8ef0-4d4c-8f8c-7f29b1e3d79b)
 
 Наполнение таблицы A
 
