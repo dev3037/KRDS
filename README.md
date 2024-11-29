@@ -1,44 +1,58 @@
-# KRDS
-1 Удаление дубликатов в таблице A
-Создание таблицы A
+# Задание 1
+Есть таблица A с тремя колонками B, C, D. Типы колонок — varchar2(10). В таблице нет никаких индексов, констрейнтов. Необходимо написать наиболее оптимизированный скрипт удаления в таблице дублей (повторений всех трех колонок). Результат удаления скрипта — в таблице должны остаться только неповторяющиеся записи.
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/757d3a1b-8ef0-4d4c-8f8c-7f29b1e3d79b" alt="Создание таблицы A" style="width:70%;"/> </div>
+создание таблицы A
+
+![image](https://github.com/user-attachments/assets/757d3a1b-8ef0-4d4c-8f8c-7f29b1e3d79b)
+
 Наполнение таблицы A
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/c900c985-e0d5-4d35-a2de-97fb3f72e8ef" alt="Наполнение таблицы A" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/c900c985-e0d5-4d35-a2de-97fb3f72e8ef)
+
 Полученная таблица
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/fdee3a30-33e5-4d86-9d2b-f87cf9768c97" alt="Полученная таблица" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/fdee3a30-33e5-4d86-9d2b-f87cf9768c97)
+
 Удаление дубликатов
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/c0fcc7c6-c9bf-4fd7-af04-824820ee5871" alt="Удаление дубликатов" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/c0fcc7c6-c9bf-4fd7-af04-824820ee5871)
+
 Таблица без дубликатов
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/bb895c80-a1d1-46f2-859b-0bd5e993cb04" alt="Таблица без дубликатов" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/bb895c80-a1d1-46f2-859b-0bd5e993cb04)
 
-2 Выборка непересекающегося множества значений
-Создание таблицы B
+# Задание 2
+Есть две таблицы A и B. В каждой таблице есть колонка C. Составьте запрос так, чтобы результатом запроса стала выборка непересекающегося множества значений колонки C из таблиц A и B.
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/03deb52b-bf47-4f6b-9c44-8485ecb1a909" alt="Создание таблицы B" style="width:70%;"/> </div>
+создание таблицы B
+
+![image](https://github.com/user-attachments/assets/03deb52b-bf47-4f6b-9c44-8485ecb1a909)
+
 Наполнение таблицы B
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/5bed0923-3ecc-4275-8adc-3abf7561e47d" alt="Наполнение таблицы B" style="width:70%;"/> </div>
-Получение выборки непересекающегося множества значений
+![image](https://github.com/user-attachments/assets/5bed0923-3ecc-4275-8adc-3abf7561e47d)
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/06c64c85-86b7-48c2-a58c-e3eb52df83a7" alt="Получение выборки" style="width:70%;"/> </div>
+Получение выборка непересекающегося множества значений колонки C
+
+![image](https://github.com/user-attachments/assets/06c64c85-86b7-48c2-a58c-e3eb52df83a7)
+
 Полученная выборка
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/b124c6b9-1e06-46b3-ad58-d4f539cdfaa8" alt="Полученная выборка" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/b124c6b9-1e06-46b3-ad58-d4f539cdfaa8)
 
-3 Структура базы данных для реестра квартир и жильцов
+# Задание 3
+Создайте структуру базы данных для решения следующей задачи: У управляющей компании стоит задача создать реестр квартир и жильцов дома. При этом нужно понимать, в каком подъезде и на каком этаже находится квартира. Количество квартир на этажах не всегда одинаковое. Количество квартир — 1471, подъездов — 7, этажей в доме — 17. Для квартир необходимо знать площадь и количество прописанных жильцов.
+
+
 ERD схема БД
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/ea13729a-c08e-4e60-934c-03d6f3e6170d" alt="ERD схема БД" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/ea13729a-c08e-4e60-934c-03d6f3e6170d)
+
 SQL скрипт
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/fa76387b-b115-458b-b590-8d3d4e83039a" alt="SQL скрипт" style="width:70%;"/> </div>
+![image](https://github.com/user-attachments/assets/fa76387b-b115-458b-b590-8d3d4e83039a)
 
-# 4
+# Задание 4
 Есть массив заказов orders, в котором каждый заказ — это объект {id, status, deliveryDate, items}, где items – массив объектов {productName, cost, quantity}.
 
 Нужно написать функцию, которая:
