@@ -205,7 +205,8 @@ function costPerMonth(orders) {
     ];
    return orders.filter(product => product.status === 'delivered') //Отфильтрует все заказы со статусом "delivered".
    .reduce((result,order) =>{
-    const totalCoast = order.items.reduce((sum,item) => sum + item.price * item.quantity,0);//Посчитает общую стоимость всех товаров в каждом заказе.
+    const totalCoast = order.items.
+    reduce((sum,item) => sum + item.price * item.quantity,0);//Посчитает общую стоимость всех товаров в каждом заказе.
     const month = months[new Date(order.deliveryDate).getMonth()];
     if(!result[month]){         //
         result[month] = 0;      //
