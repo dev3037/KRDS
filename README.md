@@ -53,89 +53,171 @@ SQL скрипт
 
 ![image](https://github.com/user-attachments/assets/fa76387b-b115-458b-b590-8d3d4e83039a)
 
-# Cost Per Month Calculation
+# 4
+Есть массив заказов orders, в котором каждый заказ — это объект {id, status, deliveryDate, items}, где items – массив объектов {productName, cost, quantity}.
 
-## Задача
+Нужно написать функцию, которая:
 
-Есть массив заказов `orders`, в котором каждый заказ — это объект со следующей структурой:
+Отфильтрует все заказы со статусом "delivered".
+Посчитает общую стоимость всех товаров в каждом заказе.
+Сгруппирует заказы по месяцам доставки.
+Итого функция должна вернуть объект, где ключ – это название месяца (в формате "January", "February", и т.д.), а значение – это общая стоимость доставленных заказов за этот месяц.
 
-```javascript
-{
-    id: number,           // Уникальный идентификатор заказа
-    status: string,       // Статус заказа (например, "delivered", "pending" и т.д.)
-    deliveryDate: string, // Дата доставки заказа
-    items: [              // Массив товаров в заказе
-        {
-            productName: string, // Название товара
-            price: number,       // Цена за единицу товара
-            quantity: number     // Количество товара
-        }
-    ]
-}
-Необходимо выполнить следующие действия:
-
-Отфильтровать все заказы со статусом "delivered".
-Посчитать общую стоимость всех товаров в каждом заказе.
-Сгруппировать заказы по месяцам доставки.
-Вернуть объект, где ключ — название месяца, а значение — общая стоимость доставленных заказов за этот месяц.
-Входные данные
-Пример массива заказов:
-javascript
-Копировать код
-const orders = [
-    {
-        id: 1,
-        status: "delivered",
-        deliveryDate: "2024-12-05",
-        items: [
-            { productName: "Item1", quantity: 2, price: 50 },
-            { productName: "Item2", quantity: 1, price: 100 }
-        ]
-    },
-    {
-        id: 2,
-        status: "pending",
-        deliveryDate: "2024-10-12",
-        items: [{ productName: "Item3", quantity: 1, price: 200 }]
-    },
-    // Остальные заказы...
+Пример данных:
+'''javaScript
+const orders = [ 
+    { 
+        id: 1, 
+        status: 'delivered', 
+        deliveryDate: '2024-10-05', 
+        items: [ 
+            { productName: 'Item1', quantity: 2, price: 50 }, 
+            { productName: 'Item2', quantity: 1, price: 100 } 
+        ] 
+    }, 
+    { 
+        id: 2, 
+        status: 'pending', 
+        deliveryDate: '2024-10-12', 
+        items: [ 
+            { productName: 'Item3', quantity: 1, price: 200 } 
+        ] 
+    } 
 ];
-Решение
-JavaScript-функция:
-javascript
-Копировать код
+
+Массив заполненный данными для задания
+const orders = [ 
+   { 
+       id: 1, 
+       status: 'delivered', 
+       deliveryDate: '2024-12-05', 
+       items: [ 
+           { productName: 'Item1', quantity: 2, price: 50 }, 
+           { productName: 'Item2', quantity: 1, price: 100 } 
+       ] 
+   }, 
+   { 
+       id: 2, 
+       status: 'pending', 
+       deliveryDate: '2024-10-12', 
+       items: [ 
+           { productName: 'Item3', quantity: 1, price: 200 } 
+       ] 
+   }, 
+   { 
+       id: 3, 
+       status: 'shipped', 
+       deliveryDate: '2024-10-08', 
+       items: [ 
+           { productName: 'Item4', quantity: 3, price: 30 }, 
+           { productName: 'Item5', quantity: 2, price: 70 } 
+       ] 
+   }, 
+   { 
+       id: 4, 
+       status: 'canceled', 
+       deliveryDate: null, 
+       items: [ 
+           { productName: 'Item6', quantity: 1, price: 120 }, 
+           { productName: 'Item7', quantity: 1, price: 60 } 
+       ] 
+   }, 
+   { 
+       id: 5, 
+       status: 'delivered', 
+       deliveryDate: '2024-9-03', 
+       items: [ 
+           { productName: 'Item8', quantity: 4, price: 25 }, 
+           { productName: 'Item9', quantity: 2, price: 80 } 
+       ] 
+   }, 
+   { 
+       id: 6, 
+       status: 'processing', 
+       deliveryDate: '2024-10-15', 
+       items: [ 
+           { productName: 'Item10', quantity: 5, price: 10 } 
+       ] 
+   }, 
+   { 
+       id: 7, 
+       status: 'delivered', 
+       deliveryDate: '2024-10-02', 
+       items: [ 
+           { productName: 'Item11', quantity: 2, price: 150 }, 
+           { productName: 'Item12', quantity: 3, price: 200 } 
+       ] 
+   }, 
+   { 
+       id: 8, 
+       status: 'returned', 
+       deliveryDate: null, 
+       items: [ 
+           { productName: 'Item13', quantity: 1, price: 300 } 
+       ] 
+   }, 
+   { 
+       id: 9, 
+       status: 'pending', 
+       deliveryDate: '2024-10-20', 
+       items: [ 
+           { productName: 'Item14', quantity: 2, price: 100 }, 
+           { productName: 'Item15', quantity: 1, price: 250 } 
+       ] 
+   }, 
+   { 
+       id: 10, 
+       status: 'delivered', 
+       deliveryDate: '2024-1-01', 
+       items: [ 
+           { productName: 'Item16', quantity: 5, price: 20 }, 
+           { productName: 'Item17', quantity: 3, price: 120 } 
+       ] 
+   }, 
+   { 
+       id: 11, 
+       status: 'processing', 
+       deliveryDate: '2024-10-14', 
+       items: [ 
+           { productName: 'Item18', quantity: 6, price: 15 }, 
+           { productName: 'Item19', quantity: 1, price: 450 } 
+       ] 
+   }, 
+   { 
+       id: 12, 
+       status: 'shipped', 
+       deliveryDate: '2024-10-07', 
+       items: [ 
+           { productName: 'Item20', quantity: 2, price: 90 }, 
+           { productName: 'Item21', quantity: 4, price: 75 } 
+       ] 
+   }
+];
+'''
+Js скрипт для выполнения задания
+
 function costPerMonth(orders) {
     const months = [
         "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
-    return orders
-        .filter(order => order.status === "delivered") // Фильтрация заказов со статусом "delivered"
-        .reduce((result, order) => {
-            const totalCost = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0); // Общая стоимость товаров
-            const month = months[new Date(order.deliveryDate).getMonth()]; // Название месяца доставки
-            if (!result[month]) {
-                result[month] = 0;
-            }
-            result[month] += totalCost; // Добавление стоимости к соответствующему месяцу
-            return result;
-        }, {});
+   return orders.filter(product => product.status === 'delivered') //Отфильтрует все заказы со статусом "delivered".
+   .reduce((result,order) =>{
+    const totalCoast = order.items.reduce((sum,item) => sum + item.price * item.quantity,0);//Посчитает общую стоимость всех товаров в каждом заказе.
+    const month = months[new Date(order.deliveryDate).getMonth()];
+    if(!result[month]){         //
+        result[month] = 0;      //
+    }                           // Сгруппирует заказы по месяцам доставки.
+    result[month]+=totalCoast;  //
+    return result;
+},{});
 }
-Вывод результата
-javascript
-Копировать код
+
 console.log(costPerMonth(orders));
-Результат выполнения
-Пример результата для заданных данных:
-javascript
-Копировать код
-{
-    December: 200,
-    September: 340,
-    October: 900,
-    January: 440
-}
-Визуализация результата:
+
+Результат выпорлнения скрипта
+![image](https://github.com/user-attachments/assets/35bf6f88-1b3a-465c-82d4-b0d7b71be327)
+
 
 
 
