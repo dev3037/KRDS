@@ -53,34 +53,89 @@ SQL скрипт
 
 ![image](https://github.com/user-attachments/assets/fa76387b-b115-458b-b590-8d3d4e83039a)
 
-# 4
-Есть массив заказов orders, в котором каждый заказ — это объект {id, status, deliveryDate, items}, где items – массив объектов {productName, cost, quantity}.
+# Cost Per Month Calculation
 
-Нужно написать функцию, которая:
+## Задача
 
-Отфильтрует все заказы со статусом "delivered".
-Посчитает общую стоимость всех товаров в каждом заказе.
-Сгруппирует заказы по месяцам доставки.
-Итого функция должна вернуть объект, где ключ – это название месяца (в формате "January", "February", и т.д.), а значение – это общая стоимость доставленных заказов за этот месяц.
+Есть массив заказов `orders`, в котором каждый заказ — это объект со следующей структурой:
 
-Пример данных:
+```javascript
+{
+    id: number,           // Уникальный идентификатор заказа
+    status: string,       // Статус заказа (например, "delivered", "pending" и т.д.)
+    deliveryDate: string, // Дата доставки заказа
+    items: [              // Массив товаров в заказе
+        {
+            productName: string, // Название товара
+            price: number,       // Цена за единицу товара
+            quantity: number     // Количество товара
+        }
+    ]
+}
+Необходимо выполнить следующие действия:
 
-const orders = [ 
-    { 
-        id: 1, 
-        status: 'delivered', 
-        deliveryDate: '2024-10-05', 
-        items: [ 
-            { productName: 'Item1', quantity: 2, price: 50 }, 
-            { productName: 'Item2', quantity: 1, price: 100 } 
-        ] 
-    }, 
-    { 
-        id: 2, 
-        status: 'pending', 
-        deliveryDate: '2024-10-12', 
-        items: [ 
-            { productName: 'Item3', quantity: 1, price: 200 } 
-        ] 
-    } 
+Отфильтровать все заказы со статусом "delivered".
+Посчитать общую стоимость всех товаров в каждом заказе.
+Сгруппировать заказы по месяцам доставки.
+Вернуть объект, где ключ — название месяца, а значение — общая стоимость доставленных заказов за этот месяц.
+Входные данные
+Пример массива заказов:
+javascript
+Копировать код
+const orders = [
+    {
+        id: 1,
+        status: "delivered",
+        deliveryDate: "2024-12-05",
+        items: [
+            { productName: "Item1", quantity: 2, price: 50 },
+            { productName: "Item2", quantity: 1, price: 100 }
+        ]
+    },
+    {
+        id: 2,
+        status: "pending",
+        deliveryDate: "2024-10-12",
+        items: [{ productName: "Item3", quantity: 1, price: 200 }]
+    },
+    // Остальные заказы...
 ];
+Решение
+JavaScript-функция:
+javascript
+Копировать код
+function costPerMonth(orders) {
+    const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    return orders
+        .filter(order => order.status === "delivered") // Фильтрация заказов со статусом "delivered"
+        .reduce((result, order) => {
+            const totalCost = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0); // Общая стоимость товаров
+            const month = months[new Date(order.deliveryDate).getMonth()]; // Название месяца доставки
+            if (!result[month]) {
+                result[month] = 0;
+            }
+            result[month] += totalCost; // Добавление стоимости к соответствующему месяцу
+            return result;
+        }, {});
+}
+Вывод результата
+javascript
+Копировать код
+console.log(costPerMonth(orders));
+Результат выполнения
+Пример результата для заданных данных:
+javascript
+Копировать код
+{
+    December: 200,
+    September: 340,
+    October: 900,
+    January: 440
+}
+Визуализация результата:
+
+
+
