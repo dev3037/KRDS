@@ -53,4 +53,34 @@ SQL скрипт
 
 ![image](https://github.com/user-attachments/assets/fa76387b-b115-458b-b590-8d3d4e83039a)
 
+# 4
+Есть массив заказов orders, в котором каждый заказ — это объект {id, status, deliveryDate, items}, где items – массив объектов {productName, cost, quantity}.
 
+Нужно написать функцию, которая:
+
+Отфильтрует все заказы со статусом "delivered".
+Посчитает общую стоимость всех товаров в каждом заказе.
+Сгруппирует заказы по месяцам доставки.
+Итого функция должна вернуть объект, где ключ – это название месяца (в формате "January", "February", и т.д.), а значение – это общая стоимость доставленных заказов за этот месяц.
+
+Пример данных:
+
+const orders = [ 
+    { 
+        id: 1, 
+        status: 'delivered', 
+        deliveryDate: '2024-10-05', 
+        items: [ 
+            { productName: 'Item1', quantity: 2, price: 50 }, 
+            { productName: 'Item2', quantity: 1, price: 100 } 
+        ] 
+    }, 
+    { 
+        id: 2, 
+        status: 'pending', 
+        deliveryDate: '2024-10-12', 
+        items: [ 
+            { productName: 'Item3', quantity: 1, price: 200 } 
+        ] 
+    } 
+];
