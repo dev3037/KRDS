@@ -64,7 +64,7 @@ SQL скрипт
 Итого функция должна вернуть объект, где ключ – это название месяца (в формате "January", "February", и т.д.), а значение – это общая стоимость доставленных заказов за этот месяц.
 
 Пример данных:
-'''javaScript
+```javascript
 const orders = [ 
     { 
         id: 1, 
@@ -84,8 +84,9 @@ const orders = [
         ] 
     } 
 ];
-
+```
 Массив заполненный данными для задания
+```javascript
 const orders = [ 
    { 
        id: 1, 
@@ -193,9 +194,10 @@ const orders = [
        ] 
    }
 ];
-'''
-Js скрипт для выполнения задания
+```
 
+Js скрипт для выполнения задания
+```javascript
 function costPerMonth(orders) {
     const months = [
         "January", "February", "March", "April", "May", "June",
@@ -214,7 +216,7 @@ function costPerMonth(orders) {
 }
 
 console.log(costPerMonth(orders));
-
+```
 Результат выпорлнения скрипта
 ![image](https://github.com/user-attachments/assets/35bf6f88-1b3a-465c-82d4-b0d7b71be327)
 
